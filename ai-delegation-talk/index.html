@@ -1,18 +1,17 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>매번 하는 말</title>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>쌓는 것과 덜어내는 것</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#17251f}body{font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#203d32}#deck{position:absolute;width:1600px;height:900px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--scale,1));transform-origin:center;overflow:hidden;background:#f5eddf;cursor:pointer}.scene{position:absolute;inset:0;visibility:hidden;opacity:0;}.scene.active{visibility:visible;opacity:1}.art{position:absolute;width:100%;height:100%;object-fit:cover}.copy{position:absolute;z-index:1;left:85px;right:85px;top:62px}h1,h2,p{margin:0}h1,h2{font-size:57px;font-weight:750;line-height:1.4;letter-spacing:-2px;text-wrap:balance}.center{text-align:center}.tags{display:flex;justify-content:space-between;margin:22px 155px 0;font-size:32px;font-weight:700}.tag{background:#f8f0e3e6;border:1px solid #203d3230;border-radius:40px;padding:7px 26px}.flip-old{font-size:40px;opacity:.85;}.flip-new{font-size:57px;margin-top:12px;opacity:0;transform:translateY(12px);}.revealed .flip-old{opacity:.42;text-decoration:line-through;text-decoration-color:#d97839}.revealed .flip-new{opacity:1;transform:translateY(0)}.quotes{display:flex;flex-direction:column;gap:14px;margin-top:23px;font-size:31px;font-weight:600;width:max-content}.quotes p{padding:9px 19px;background:#fff9efeb;border-left:4px solid #d97839;box-shadow:0 4px 14px #473c2410}.stations{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:35px;top:95px}.stations h2{font-size:43px;letter-spacing:-1px}.journey{top:70px;display:flex;align-items:center;justify-content:space-between;gap:14px;white-space:nowrap;font-size:29px;font-weight:750;letter-spacing:-1px}.journey .arrow{color:#c56832;font-size:30px}.closing{top:142px;right:auto;width:890px}.closing h1{font-size:53px;line-height:1.6;word-break:keep-all;text-wrap:initial}.closing p{font-size:29px;margin-top:39px;font-weight:500;color:#58675b}.counter{position:absolute;z-index:3;right:35px;bottom:25px;font-size:17px;color:#203d32;background:#faf3e5d9;border-radius:25px;padding:7px 14px;font-variant-numeric:tabular-nums}button{position:absolute;z-index:4;border:0;background:#faf3e5d9;color:#203d32;bottom:23px;left:30px;width:42px;height:36px;border-radius:22px;font-size:22px;cursor:pointer;opacity:0;}#next{left:80px}#deck:hover button,button:focus-visible{opacity:1}button:focus-visible{outline:3px solid #d97839}@media(prefers-reduced-motion:reduce){*{}}
-.honest h2{font-size:67px}.honest p{font-size:34px;font-weight:600;margin-top:10px}.honest p:last-child{color:#b95d2d}.zoom-near,.zoom-far{transform-origin:62.5% 65%;will-change:transform,opacity}.zoom-far{transform:scale(11.111111);opacity:0}.universe-copy{visibility:hidden;opacity:0}.universe-copy p{font-size:31px;margin-top:17px}.zoom-complete .universe-copy{visibility:visible;opacity:1}.honest-copy{transition:opacity .6s}.zooming .honest-copy{opacity:0}</style></head><body>
+.honest h2{font-size:67px}.honest p{font-size:34px;font-weight:600;margin-top:10px}.honest p:last-child{color:#b95d2d}.zoom-near,.zoom-far{transform-origin:62.5% 65%;will-change:transform,opacity}.zoom-far{transform:scale(11.111111);opacity:0}.universe-copy{visibility:hidden;opacity:0}.universe-copy p{font-size:31px;margin-top:17px}.zoom-complete .universe-copy{visibility:visible;opacity:1}.honest-copy{transition:opacity .6s}.zooming .honest-copy{opacity:0}.dim{position:absolute;inset:0;background:#f5eddf;opacity:0;transition:opacity .4s;z-index:1}.shown .dim{opacity:.9}.reveal{position:absolute;z-index:2;left:0;right:0;top:300px;text-align:center;opacity:0;visibility:hidden;transition:opacity .4s}.shown .reveal{opacity:1;visibility:visible}.copy{z-index:2}.nums{display:flex;justify-content:center;align-items:flex-start;gap:46px}.nums div{display:flex;flex-direction:column;align-items:center}.nums b{font-size:132px;line-height:1;font-weight:750;letter-spacing:-4px;color:#203d32}.nums b.hit{color:#c56832}.nums span{font-size:26px;margin-top:14px;color:#58675b}.nums i{font-style:normal;font-size:70px;line-height:1.7;color:#c56832}.unit{font-size:28px;margin-top:26px;color:#58675b}.buried{font-size:38px;font-weight:700;margin-top:58px}.buried small{display:block;font-size:28px;font-weight:500;margin-top:10px;color:#58675b}</style></head><body>
 <main id="deck" aria-label="발표 슬라이드">
-<section class="scene active" aria-label="1"><img class="art" src="scene-01.png" alt="개발자와 주황색 AI 동료 앞에 펼쳐진 종이 작업 풍경"><div class="copy center"><h1>AI한테 어디까지 맡겨도 될까?</h1></div></section>
-<section class="scene" aria-label="2"><img class="art" src="scene-02.png" alt="개발자가 주황색 경계선을 더 바깥으로 옮기는 모습"><div class="copy center"><h2>선은 정하는 게 아니라 옮기는 것</h2></div></section>
-<section class="scene" aria-label="3"><img class="art" src="scene-03.png" alt="여러 AI의 작업이 개발자 한 사람의 책상으로 몰리는 모습"><div class="copy center"><h2>병목이 옮겨 왔다</h2><div class="tags"><span class="tag">AI</span><span class="tag">나</span></div></div></section>
-<section class="scene" id="flip" aria-label="4"><img class="art" src="scene-04.png" alt="페이지가 뒤집히며 준비된 디딤돌이 나타나는 모습"><div class="copy center"><p class="flip-old">어디까지 맡겨도 되나</p><h2 class="flip-new">맡길 수 있게 무엇을 준비해 뒀나</h2></div></section>
-<section class="scene" aria-label="5"><img class="art" src="scene-05.png" alt="새로운 AI 동료에게 같은 말을 반복하는 주황색 고리"><div class="copy"><h2>매번 하는 말</h2><div class="quotes"><p>"커밋 메시지는 이렇게 써"</p><p>"이 폴더는 건드리지 마"</p><p>"끝내기 전에 테스트 돌려"</p></div></div></section>
-<section class="scene" aria-label="6"><img class="art" src="scene-06.png" alt="메모로 부탁하기, 스스로 확인하기, 문으로 막기의 세 가지 종이 모형"><div class="copy stations"><h2>CLAUDE.md 한 줄</h2><h2>테스트</h2><h2>hook</h2></div></section>
-<section class="scene" aria-label="7"><img class="art" src="scene-07.png" alt="정돈된 메모를 따라 일하는 로봇과 편안한 개발자"><div class="copy center"><h2>매번 말한다 → 적어 둔다</h2></div></section>
-<section class="scene" id="universe" aria-label="8"><img class="art zoom-far" src="scene-09b.png" alt="작은 첫 행성과 주황색 실로 연결된 여러 로봇 행성의 종이 우주"><img class="art zoom-near" src="scene-09a.png" alt="익숙한 종이 세계에서 함께 작업하는 개발자와 로봇"><div class="copy center honest honest-copy"><h2>근데 솔직히,</h2><p>적는 것도 귀찮다</p><p>그래서 적는 것도 맡겼다</p></div><div class="copy center universe-copy" aria-hidden="true"><h2>말하지 않아도 내 기준대로</h2><p>지금 제 목표</p></div></section>
-<button id="prev" aria-label="이전 슬라이드">‹</button><button id="next" aria-label="다음 슬라이드">›</button><output class="counter" aria-live="polite">1 / 8</output>
+<section class="scene" aria-label="1"><img class="art" src="scene-01.png" alt="개발자와 주황색 AI 동료 앞에 펼쳐진 종이 작업 풍경"><div class="copy center"><h1>CLAUDE.md, 몇 줄이세요?</h1></div></section>
+<section class="scene" aria-label="2"><img class="art" src="scene-stack.png" alt="책상 둘레에 안전장치를 하나씩 세우는 개발자와 로봇"><div class="copy center honest"><h2>쌓았다</h2><p>hook · gate · probe</p></div></section>
+<section class="scene" aria-label="3"><img class="art" src="scene-heavy.png" alt="겹겹의 관문 앞에서 줄을 서는 로봇과 기다리는 개발자"><div class="copy center honest"><h2>무거워졌다</h2><p>규칙은 서로를 흐리고,</p><p>검사는 일보다 길어졌다</p></div></section>
+<section class="scene" aria-label="4"><img class="art" src="scene-03.png" alt="여러 AI의 작업이 개발자 한 사람의 책상으로 몰리는 모습"><div class="copy center"><h2>병목이 나로 옮겨 왔다</h2><div class="tags"><span class="tag">AI</span><span class="tag">나</span></div></div></section>
+<section class="scene" aria-label="5"><img class="art" src="scene-02.png" alt="개발자가 경계선을 바깥으로 옮기고 말뚝을 줄이는 모습"><div class="copy"><h2>덜어냈다</h2><div class="quotes"><p>규칙은 넷에서 멈춘다</p><p>검사는 바뀐 것만</p><p>막는 건 push 하나</p><p>CLAUDE.md엔 매번 필요한 것만</p></div></div></section>
+<section class="scene" aria-label="6"><img class="art" src="scene-07.png" alt="정돈된 메모를 따라 일하는 로봇과 편안한 개발자"><div class="dim"></div><div class="copy center honest"><h2>이 문장이 없으면, AI가 틀리는가?</h2><p>아니면 덜어낸다</p></div><div class="reveal case"><div class="nums"><div><b>733</b><span>정리 전</span></div><i>→</i><div><b class="hit">202</b><span>2026.09 정리</span></div><i>→</i><div><b>156</b><span>지금</span></div></div><p class="unit">CLAUDE.md 줄 수</p><p class="buried">"규칙은 서로를 희석시킨다"<br><small>이 문장도 700줄 사이에 묻혀 있었다</small></p></div></section>
+<section class="scene" id="universe" aria-label="7"><img class="art zoom-far" src="scene-09b.png" alt="작은 첫 행성과 주황색 실로 연결된 여러 로봇 행성의 종이 우주"><img class="art zoom-near" src="scene-09a.png" alt="느긋한 개발자의 말을 로봇이 받아 적는 종이 세계"><div class="copy center honest honest-copy"><h2>아직 고민 중이다</h2><p>덜어내면서 성능은 지키려면?</p><p>그래서 규칙 대신, 내 기준을 모으게 했다</p></div><div class="copy center universe-copy" aria-hidden="true"><h2>말하지 않아도 내 기준대로</h2><p>지금 제 목표</p></div></section>
+<button id="prev" aria-label="이전 슬라이드">‹</button><button id="next" aria-label="다음 슬라이드">›</button><output class="counter" aria-live="polite">1 / 7</output>
 </main>
 <script>
 const deck=document.querySelector('#deck'),scenes=[...document.querySelectorAll('.scene')],counter=document.querySelector('.counter'),flip=document.querySelector('#flip'),universe=document.querySelector('#universe'),near=universe.querySelector('.zoom-near'),far=universe.querySelector('.zoom-far'),universeCopy=universe.querySelector('.universe-copy');
@@ -39,11 +38,11 @@ async function startZoom(){
   cancelZoom();const token=zoomToken;zoomRunning=true;universe.classList.add('zooming');
   universe.classList.remove('zoom-complete');universeCopy.setAttribute('aria-hidden','true');paintZoom(0);
   await Promise.all([near,far].map(img=>img.decode().catch(()=>{})));
-  if(token!==zoomToken||index!==7)return;
+  if(token!==zoomToken||index!==6)return;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){finishZoom();return}
   let started;
   function tick(now){
-    if(token!==zoomToken||index!==7)return;
+    if(token!==zoomToken||index!==6)return;
     if(started===undefined)started=now;
     const t=Math.min(1,(now-started)/6000);paintZoom(t);
     if(t===1)finishZoom();else zoomFrame=requestAnimationFrame(tick);
@@ -52,25 +51,27 @@ async function startZoom(){
 }
 function show(n){
   const next=Math.max(0,Math.min(scenes.length-1,n));
-  if(next!==7)cancelZoom();
+  if(next!==6)cancelZoom();
   index=next;
   scenes.forEach((s,i)=>{s.classList.toggle('active',i===index);s.setAttribute('aria-hidden',i!==index)});
   counter.textContent=(index+1)+' / '+scenes.length;
   history.replaceState(null,'','#'+(index+1));
-  if(index===7)resetZoom();
+  if(index===6)resetZoom();
 }
 function resetZoom(){
   cancelZoom();universe.classList.remove('zoom-complete','zooming');universeCopy.setAttribute('aria-hidden','true');paintZoom(0);
 }
 function forward(){
-  if(index===7&&zoomRunning){finishZoom();return}
-  if(index===7&&!universe.classList.contains('zoom-complete')){startZoom();return}
-  if(index===3&&!revealed){revealed=true;flip.classList.add('revealed');return}
+  {const sc=scenes[index];if(sc.querySelector('.reveal')&&!sc.classList.contains('shown')){sc.classList.add('shown');return}}
+  if(index===6&&zoomRunning){finishZoom();return}
+  if(index===6&&!universe.classList.contains('zoom-complete')){startZoom();return}
+  if(flip&&index===3&&!revealed){revealed=true;flip.classList.add('revealed');return}
   if(index===scenes.length-1)return;
   show(index+1);
 }
 function back(){
-  if(index===3&&revealed){revealed=false;flip.classList.remove('revealed');return}
+  {const sc=scenes[index];if(sc.classList.contains('shown')){sc.classList.remove('shown');return}}
+  if(flip&&index===3&&revealed){revealed=false;flip.classList.remove('revealed');return}
   show(index-1);
 }
 deck.addEventListener('click',e=>{if(!e.target.closest('button'))forward()});
